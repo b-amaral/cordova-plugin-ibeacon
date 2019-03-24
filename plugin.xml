@@ -104,6 +104,12 @@
                      android:name="org.altbeacon.beacon.service.BeaconService">
             </service>
             <service android:enabled="true"
+                     android:exported="true"
+                     android:isolatedProcess="false"
+                     android:label="iBeacon"
+                     android:name="org.altbeacon.beacon.service.BackgroundBeaconService">
+            </service>
+            <service android:enabled="true"
                      android:name="org.altbeacon.beacon.BeaconIntentProcessor">
                 <meta-data android:name="background" android:value="true" />
                 <intent-filter android:priority="1" >
@@ -117,6 +123,7 @@
         <source-file src="src/android/IBeaconServiceNotifier.java" target-dir="src/com/unarin/cordova/beacon" />
         <source-file src="src/android/ILocationManagerCommand.java" target-dir="src/com/unarin/cordova/beacon" />
         <source-file src="src/android/PausableThreadPoolExecutor.java" target-dir="src/com/unarin/cordova/beacon" />
+        <source-file src="src/android/BackgroundBeaconService.java" target-dir="src/com/unarin/cordova/beacon" />
 
 		<source-file src="libs/android/altbeacon.jar" target-dir="libs" framework="true" />
     </platform>
